@@ -22,8 +22,8 @@ def get_db() :
         db.close()
 
 
-@app.post("/api/v1/business_cards/", response_model = schemas.BusinessCard)
-def create_business_card (card : schemas.BusinessCardCreate, db : Session = Depends(get_db)) :
+@app.post("/api/v1/cards/", response_model = schemas.BusinessCard)
+def create_card (card : schemas.BusinessCardCreate, db : Session = Depends(get_db)) :
     
     try : 
         payload = card.model_dump(exclude_none = True)
